@@ -118,3 +118,8 @@ scores in the post use the final graders; `check_graders.py` re-validates the ca
 - The official checkpoint ran on different hardware, so it is compared on quality and agent behaviour only, not on
   speed against the laptop. Its server's 64K context cut one 32K retry short.
 - Laptop speed depends on the runtime version and the power state; see "Speed".
+
+## Licence
+
+MIT (see `LICENSE`) for the code, graders and results in this repository. Model weights and the model card numbers in
+`lab_numbers.json` belong to their respective owners.
