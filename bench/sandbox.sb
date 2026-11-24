@@ -1,0 +1,8 @@
+(version 1)
+(allow default)
+(deny network*)
+(allow network* (local unix))
+(deny file-write*)
+(allow file-write* (subpath (param "WS")))
+(allow file-write* (subpath "/dev"))
+(allow file-write* (subpath "/private/var/folders"))

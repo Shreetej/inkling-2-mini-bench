@@ -1,0 +1,301 @@
+{
+ "omlx": "0.8.3",
+ "power": "ac",
+ "rounds": 3,
+ "models": {
+  "inkling-2-mini": {
+   "decode_tps": 41.5,
+   "decode_min": 38.74,
+   "decode_max": 55.03,
+   "prefill8k_tps": 1037.6,
+   "memory_gb": 18.43,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      55.03,
+      54.7
+     ],
+     "prefill_tps": 1559.56,
+     "prompt_tokens": 9510,
+     "memory_gb": 18.43,
+     "battery": "80%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      38.74,
+      39.38
+     ],
+     "prefill_tps": 1002.47,
+     "prompt_tokens": 9506,
+     "memory_gb": 18.43,
+     "battery": "80%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      42.17,
+      40.78
+     ],
+     "prefill_tps": 1037.61,
+     "prompt_tokens": 9495,
+     "memory_gb": 18.43,
+     "battery": "80%"
+    }
+   ]
+  },
+  "qwen3.8-27b": {
+   "decode_tps": 25.2,
+   "decode_min": 24.25,
+   "decode_max": 50.91,
+   "prefill8k_tps": 430.2,
+   "memory_gb": 17.82,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      50.91,
+      38.23
+     ],
+     "prefill_tps": 518.7,
+     "prompt_tokens": 7583,
+     "memory_gb": 17.82,
+     "battery": "80%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      24.6,
+      25.78
+     ],
+     "prefill_tps": 430.19,
+     "prompt_tokens": 7529,
+     "memory_gb": 17.82,
+     "battery": "80%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      24.37,
+      24.25
+     ],
+     "prefill_tps": 428.03,
+     "prompt_tokens": 7634,
+     "memory_gb": 17.82,
+     "battery": "80%"
+    }
+   ]
+  },
+  "qwen3.6-35b-a3b": {
+   "decode_tps": 127.5,
+   "decode_min": 85.83,
+   "decode_max": 144.81,
+   "prefill8k_tps": 2526.1,
+   "memory_gb": 21.42,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      144.21,
+      144.81
+     ],
+     "prefill_tps": 4171.01,
+     "prompt_tokens": 7541,
+     "memory_gb": 21.42,
+     "battery": "80%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      86.9,
+      85.83
+     ],
+     "prefill_tps": 1991.99,
+     "prompt_tokens": 7487,
+     "memory_gb": 21.42,
+     "battery": "80%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      139.82,
+      115.27
+     ],
+     "prefill_tps": 2526.09,
+     "prompt_tokens": 7592,
+     "memory_gb": 21.42,
+     "battery": "80%"
+    }
+   ]
+  },
+  "gemma-4-31b": {
+   "decode_tps": 15.2,
+   "decode_min": 11.9,
+   "decode_max": 20.44,
+   "prefill8k_tps": 297.2,
+   "memory_gb": 19.33,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      20.44,
+      19.48
+     ],
+     "prefill_tps": 382.29,
+     "prompt_tokens": 6048,
+     "memory_gb": 19.33,
+     "battery": "80%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      11.9,
+      12.46
+     ],
+     "prefill_tps": 270.27,
+     "prompt_tokens": 6048,
+     "memory_gb": 19.33,
+     "battery": "80%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      15.12,
+      15.26
+     ],
+     "prefill_tps": 297.18,
+     "prompt_tokens": 6048,
+     "memory_gb": 19.33,
+     "battery": "80%"
+    }
+   ]
+  },
+  "gemma-4-26b-a4b": {
+   "decode_tps": 88.5,
+   "decode_min": 77.44,
+   "decode_max": 110.37,
+   "prefill8k_tps": 1929.8,
+   "memory_gb": 16.39,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      110.37,
+      89.33
+     ],
+     "prefill_tps": 2179.37,
+     "prompt_tokens": 6048,
+     "memory_gb": 16.39,
+     "battery": "80%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      78.18,
+      77.44
+     ],
+     "prefill_tps": 1812.7,
+     "prompt_tokens": 6048,
+     "memory_gb": 16.39,
+     "battery": "80%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      92.49,
+      87.68
+     ],
+     "prefill_tps": 1929.83,
+     "prompt_tokens": 6048,
+     "memory_gb": 16.39,
+     "battery": "80%"
+    }
+   ]
+  },
+  "nemotron-3.5-lightning-30b-a3b": {
+   "decode_tps": 106.6,
+   "decode_min": 100.13,
+   "decode_max": 120.12,
+   "prefill8k_tps": 1779.4,
+   "memory_gb": 18.66,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      120.12,
+      100.13
+     ],
+     "prefill_tps": 1742.72,
+     "prompt_tokens": 8012,
+     "memory_gb": 18.66,
+     "battery": "80%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      103.31,
+      101.42
+     ],
+     "prefill_tps": 1779.39,
+     "prompt_tokens": 8037,
+     "memory_gb": 18.66,
+     "battery": "80%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      112.3,
+      109.89
+     ],
+     "prefill_tps": 1907.45,
+     "prompt_tokens": 8045,
+     "memory_gb": 18.66,
+     "battery": "80%"
+    }
+   ]
+  },
+  "gpt-oss-20b": {
+   "decode_tps": 81.6,
+   "decode_min": 58.38,
+   "decode_max": 85.0,
+   "prefill8k_tps": 2228.0,
+   "memory_gb": 12.68,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      71.67,
+      58.38
+     ],
+     "prefill_tps": 1570.83,
+     "prompt_tokens": 6837,
+     "memory_gb": 12.68,
+     "battery": "80%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      81.58,
+      81.66
+     ],
+     "prefill_tps": 2227.96,
+     "prompt_tokens": 6812,
+     "memory_gb": 12.68,
+     "battery": "80%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      85.0,
+      84.49
+     ],
+     "prefill_tps": 2353.3,
+     "prompt_tokens": 6857,
+     "memory_gb": 12.68,
+     "battery": "80%"
+    }
+   ]
+  }
+ }
+}

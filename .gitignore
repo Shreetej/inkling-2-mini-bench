@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+.DS_Store
+# run logs duplicate the JSON results and contain local paths
+results/*.log
+# production notes for the video, not part of the benchmark
+VIDEO.md
+hf-card/

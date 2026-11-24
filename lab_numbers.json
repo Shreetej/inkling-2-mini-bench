@@ -1,0 +1,23 @@
+{
+  "_source": "Thinking Machines model card, section 5 (https://thinkingmachines.ai/model-card/inkling-2-mini/), Nov 20 2026. Lab-reported, not reproduced. Params = activated/total (B).",
+  "models": ["Inkling 2 Mini", "Qwen3.8-27B", "Gemma 4 31B", "Muse Glimmer", "Nemotron 3.5 Super VL", "Beam 1.0"],
+  "params": ["5.4/26.4", "27.0/27.0", "30.7/30.7", "30.0/30.0", "12.0/124.5", "23.0/501.0"],
+  "rows": {
+    "AA Intelligence Index v5.0": [20.1, 20.1, 4.4, 6.3, 13.6, 17.7],
+    "DeepSWE v1.1": [48.2, 42.2, 0.3, 4.4, 24.7, 44.4],
+    "SWE-bench Verified (bash only)": [79.2, 77.8, 46.1, 76.0, 71.1, 80.1],
+    "SWE-bench Pro v2 (Hard)": [77.9, 73.8, 14.2, 44.3, 44.1, 77.2],
+    "Terminal Bench v2.1": [71.6, 73.0, 43.4, 51.7, 60.7, 80.1],
+    "BrowseComp": [79.0, 61.6, 37.0, 63.9, 78.9, 76.8],
+    "MCP Atlas (Public)": [82.7, 77.3, 54.2, 75.5, 67.7, 83.2],
+    "GPQA Diamond": [86.6, 90.5, 85.7, 83.5, 89.5, 90.5],
+    "HLE (text only)": [30.7, 33.9, 23.6, 22.0, 30.7, 36.2],
+    "ARC-AGI-2": [49.3, 42.4, null, null, 1.5, 23.5],
+    "LongBench v2": [66.9, 52.3, 52.9, 33.1, 62.1, 66.9],
+    "MRCR v2 8-needle 256K-512K": [46.4, 38.0, null, null, 5.7, null],
+    "MMMU Pro (Standard 10)": [74.9, 76.3, 73.4, 74.3, 72.3, null],
+    "ComplexConstraints v1.1": [33.4, 30.1, 31.6, 35.6, 30.1, 42.9],
+    "AA-Omniscience non-hallucination rate": [63.4, 71.4, 14.5, 16.4, 69.5, 59.0],
+    "Destructive actions (internal, lower is better)": [10.2, 35.2, 75.8, 68.8, 65.6, 26.6]
+  }
+}

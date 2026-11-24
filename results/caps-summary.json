@@ -1,0 +1,343 @@
+{
+ "gemma-4-26b-a4b": {
+  "vision": [
+   9,
+   13
+  ],
+  "total": [
+   9,
+   13
+  ],
+  "truncated": [],
+  "failed": [
+   "vision/chart_line",
+   "vision/chart_scatter",
+   "vision/count_red_triangles",
+   "vision/multi_count"
+  ],
+  "out_tokens": 103
+ },
+ "inkling-2-mini": {
+  "coding": [
+   6,
+   8
+  ],
+  "tools": [
+   6,
+   6
+  ],
+  "search": [
+   4,
+   4
+  ],
+  "work": [
+   2,
+   2
+  ],
+  "vision": [
+   13,
+   13
+  ],
+  "long": [
+   4,
+   4
+  ],
+  "math": [
+   2,
+   4
+  ],
+  "constraints": [
+   3,
+   3
+  ],
+  "multilingual": [
+   5,
+   5
+  ],
+  "safety_benign": [
+   5,
+   5
+  ],
+  "safety_harmful": [
+   4,
+   4
+  ],
+  "total": [
+   54,
+   58
+  ],
+  "truncated": [
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "failed": [
+   "coding/rs_rle",
+   "coding/rs_rpn",
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "out_tokens": 114040
+ },
+ "inkling-2-mini-vllm-native": {
+  "coding": [
+   7,
+   8
+  ],
+  "tools": [
+   6,
+   6
+  ],
+  "search": [
+   4,
+   4
+  ],
+  "work": [
+   2,
+   2
+  ],
+  "vision": [
+   13,
+   13
+  ],
+  "long": [
+   2,
+   4
+  ],
+  "math": [
+   2,
+   4
+  ],
+  "constraints": [
+   3,
+   3
+  ],
+  "multilingual": [
+   5,
+   5
+  ],
+  "safety_benign": [
+   5,
+   5
+  ],
+  "safety_harmful": [
+   4,
+   4
+  ],
+  "total": [
+   53,
+   58
+  ],
+  "truncated": [
+   "long/graph_bfs",
+   "long/kv_last",
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "failed": [
+   "coding/rs_rle",
+   "long/graph_bfs",
+   "long/kv_last",
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "out_tokens": 129683
+ },
+ "nemotron-3.5-lightning-30b-a3b": {
+  "coding": [
+   5,
+   8
+  ],
+  "tools": [
+   6,
+   6
+  ],
+  "search": [
+   4,
+   4
+  ],
+  "work": [
+   2,
+   2
+  ],
+  "long": [
+   0,
+   4
+  ],
+  "math": [
+   2,
+   4
+  ],
+  "constraints": [
+   3,
+   3
+  ],
+  "multilingual": [
+   5,
+   5
+  ],
+  "safety_benign": [
+   5,
+   5
+  ],
+  "safety_harmful": [
+   4,
+   4
+  ],
+  "total": [
+   36,
+   45
+  ],
+  "truncated": [
+   "coding/go_roman",
+   "long/memo_needle",
+   "long/graph_bfs",
+   "long/kv_last",
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "failed": [
+   "coding/go_roman",
+   "coding/rs_rle",
+   "coding/rs_rpn",
+   "long/memo_needle",
+   "long/graph_bfs",
+   "long/kv_last",
+   "long/ticket_count",
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "out_tokens": 161740
+ },
+ "qwen3.6-35b-a3b": {
+  "coding": [
+   6,
+   8
+  ],
+  "tools": [
+   6,
+   6
+  ],
+  "search": [
+   3,
+   4
+  ],
+  "work": [
+   2,
+   2
+  ],
+  "vision": [
+   12,
+   13
+  ],
+  "long": [
+   3,
+   4
+  ],
+  "math": [
+   1,
+   4
+  ],
+  "constraints": [
+   3,
+   3
+  ],
+  "multilingual": [
+   5,
+   5
+  ],
+  "safety_benign": [
+   5,
+   5
+  ],
+  "safety_harmful": [
+   4,
+   4
+  ],
+  "total": [
+   50,
+   58
+  ],
+  "truncated": [
+   "search/novelist",
+   "vision/chart_scatter",
+   "long/graph_bfs",
+   "math/divisors4",
+   "math/euler_poly",
+   "math/tiling"
+  ],
+  "failed": [
+   "coding/js_parse_query",
+   "coding/go_roman",
+   "search/novelist",
+   "vision/chart_scatter",
+   "long/graph_bfs",
+   "math/divisors4",
+   "math/euler_poly",
+   "math/tiling"
+  ],
+  "out_tokens": 234232
+ },
+ "qwen3.8-27b": {
+  "coding": [
+   7,
+   8
+  ],
+  "tools": [
+   6,
+   6
+  ],
+  "search": [
+   4,
+   4
+  ],
+  "work": [
+   2,
+   2
+  ],
+  "vision": [
+   13,
+   13
+  ],
+  "long": [
+   3,
+   4
+  ],
+  "math": [
+   2,
+   4
+  ],
+  "constraints": [
+   3,
+   3
+  ],
+  "multilingual": [
+   5,
+   5
+  ],
+  "safety_benign": [
+   5,
+   5
+  ],
+  "safety_harmful": [
+   4,
+   4
+  ],
+  "total": [
+   54,
+   58
+  ],
+  "truncated": [
+   "coding/js_deep_equal",
+   "long/graph_bfs",
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "failed": [
+   "coding/js_deep_equal",
+   "long/graph_bfs",
+   "math/divisors4",
+   "math/euler_poly"
+  ],
+  "out_tokens": 145490
+ }
+}

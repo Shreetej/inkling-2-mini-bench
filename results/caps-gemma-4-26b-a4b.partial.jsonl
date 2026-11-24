@@ -1,0 +1,13 @@
+{"id": "vision/doc_transcribe", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 10, "wall": 1.2, "content": "scheduled for the second Tuesday of every third month,", "calls": []}
+{"id": "vision/doc_receipt", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 16, "wall": 1.3, "content": "GL-20481-K; 26.40", "calls": []}
+{"id": "vision/chart_bar", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 2, "wall": 0.8, "content": "58", "calls": []}
+{"id": "vision/doc_table", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 10, "wall": 1.0, "content": "Ulaanbaatar, -11.6", "calls": []}
+{"id": "vision/chart_scatter", "area": "vision", "pass": false, "finish": "stop", "error": null, "out_tokens": 2, "wall": 1.6, "content": "10", "calls": []}
+{"id": "vision/chart_line", "area": "vision", "pass": false, "finish": "stop", "error": null, "out_tokens": 4, "wall": 1.7, "content": "2021", "calls": []}
+{"id": "vision/gui_button", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 9, "wall": 2.0, "content": "(267, 85)", "calls": []}
+{"id": "vision/gui_checkbox", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 9, "wall": 2.0, "content": "(73, 288)", "calls": []}
+{"id": "vision/count_red_triangles", "area": "vision", "pass": false, "finish": "stop", "error": null, "out_tokens": 1, "wall": 1.0, "content": "8", "calls": []}
+{"id": "vision/gui_link", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 10, "wall": 1.6, "content": "(106, 734)", "calls": []}
+{"id": "vision/spatial", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 3, "wall": 1.7, "content": "left, below", "calls": []}
+{"id": "vision/multi_count", "area": "vision", "pass": false, "finish": "stop", "error": null, "out_tokens": 8, "wall": 2.3, "content": "first; 7, 10", "calls": []}
+{"id": "vision/multi_diff", "area": "vision", "pass": true, "finish": "stop", "error": null, "out_tokens": 19, "wall": 1.9, "content": "Greek yoghurt 500g; 3.60, 4.15", "calls": []}

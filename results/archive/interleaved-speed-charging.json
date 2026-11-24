@@ -1,0 +1,301 @@
+{
+ "omlx": "0.8.3",
+ "power": "ac",
+ "rounds": 3,
+ "models": {
+  "inkling-2-mini": {
+   "decode_tps": 31.4,
+   "decode_min": 29.13,
+   "decode_max": 34.68,
+   "prefill8k_tps": 819.4,
+   "memory_gb": 18.43,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      34.55,
+      34.68
+     ],
+     "prefill_tps": 890.59,
+     "prompt_tokens": 9510,
+     "memory_gb": 18.43,
+     "battery": "44%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      29.13,
+      31.3
+     ],
+     "prefill_tps": 783.78,
+     "prompt_tokens": 9506,
+     "memory_gb": 18.43,
+     "battery": "58%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      31.5,
+      29.36
+     ],
+     "prefill_tps": 819.36,
+     "prompt_tokens": 9495,
+     "memory_gb": 18.43,
+     "battery": "63%"
+    }
+   ]
+  },
+  "qwen3.8-27b": {
+   "decode_tps": 17.8,
+   "decode_min": 16.47,
+   "decode_max": 23.48,
+   "prefill8k_tps": 325.5,
+   "memory_gb": 17.82,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      23.48,
+      19.37
+     ],
+     "prefill_tps": 358.69,
+     "prompt_tokens": 7583,
+     "memory_gb": 17.82,
+     "battery": "46%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      17.54,
+      17.2
+     ],
+     "prefill_tps": 325.54,
+     "prompt_tokens": 7529,
+     "memory_gb": 17.82,
+     "battery": "60%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      16.47,
+      18.09
+     ],
+     "prefill_tps": 323.52,
+     "prompt_tokens": 7634,
+     "memory_gb": 17.82,
+     "battery": "65%"
+    }
+   ]
+  },
+  "qwen3.6-35b-a3b": {
+   "decode_tps": 98.0,
+   "decode_min": 88.49,
+   "decode_max": 107.95,
+   "prefill8k_tps": 2208.9,
+   "memory_gb": 21.42,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      107.95,
+      99.89
+     ],
+     "prefill_tps": 2377.33,
+     "prompt_tokens": 7541,
+     "memory_gb": 21.42,
+     "battery": "46%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      102.54,
+      92.97
+     ],
+     "prefill_tps": 2208.9,
+     "prompt_tokens": 7487,
+     "memory_gb": 21.42,
+     "battery": "51%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      96.21,
+      88.49
+     ],
+     "prefill_tps": 2192.45,
+     "prompt_tokens": 7592,
+     "memory_gb": 21.42,
+     "battery": "66%"
+    }
+   ]
+  },
+  "gemma-4-31b": {
+   "decode_tps": 11.3,
+   "decode_min": 10.78,
+   "decode_max": 12.77,
+   "prefill8k_tps": 256.6,
+   "memory_gb": 19.33,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      12.77,
+      12.65
+     ],
+     "prefill_tps": 283.03,
+     "prompt_tokens": 6048,
+     "memory_gb": 19.33,
+     "battery": "49%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      11.5,
+      11.16
+     ],
+     "prefill_tps": 256.63,
+     "prompt_tokens": 6048,
+     "memory_gb": 19.33,
+     "battery": "54%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      10.78,
+      10.84
+     ],
+     "prefill_tps": 248.36,
+     "prompt_tokens": 6048,
+     "memory_gb": 19.33,
+     "battery": "69%"
+    }
+   ]
+  },
+  "gemma-4-26b-a4b": {
+   "decode_tps": 66.2,
+   "decode_min": 63.91,
+   "decode_max": 72.66,
+   "prefill8k_tps": 1594.5,
+   "memory_gb": 16.39,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      72.66,
+      70.9
+     ],
+     "prefill_tps": 1714.28,
+     "prompt_tokens": 6048,
+     "memory_gb": 16.39,
+     "battery": "50%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      64.38,
+      63.91
+     ],
+     "prefill_tps": 1562.12,
+     "prompt_tokens": 6048,
+     "memory_gb": 16.39,
+     "battery": "55%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      67.09,
+      65.21
+     ],
+     "prefill_tps": 1594.55,
+     "prompt_tokens": 6048,
+     "memory_gb": 16.39,
+     "battery": "61%"
+    }
+   ]
+  },
+  "nemotron-3.5-lightning-30b-a3b": {
+   "decode_tps": 82.7,
+   "decode_min": 79.69,
+   "decode_max": 89.6,
+   "prefill8k_tps": 1509.4,
+   "memory_gb": 18.66,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      89.6,
+      87.82
+     ],
+     "prefill_tps": 1574.57,
+     "prompt_tokens": 8012,
+     "memory_gb": 18.66,
+     "battery": "50%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      79.69,
+      80.37
+     ],
+     "prefill_tps": 1451.68,
+     "prompt_tokens": 8037,
+     "memory_gb": 18.66,
+     "battery": "56%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      82.53,
+      82.92
+     ],
+     "prefill_tps": 1509.4,
+     "prompt_tokens": 8045,
+     "memory_gb": 18.66,
+     "battery": "61%"
+    }
+   ]
+  },
+  "gpt-oss-20b": {
+   "decode_tps": 66.2,
+   "decode_min": 62.24,
+   "decode_max": 69.8,
+   "prefill8k_tps": 1836.3,
+   "memory_gb": 12.68,
+   "visits": [
+    {
+     "round": 0,
+     "decode": [
+      69.8,
+      68.16
+     ],
+     "prefill_tps": 1875.38,
+     "prompt_tokens": 6837,
+     "memory_gb": 12.68,
+     "battery": "51%"
+    },
+    {
+     "round": 1,
+     "decode": [
+      63.44,
+      62.24
+     ],
+     "prefill_tps": 1760.34,
+     "prompt_tokens": 6812,
+     "memory_gb": 12.68,
+     "battery": "56%"
+    },
+    {
+     "round": 2,
+     "decode": [
+      66.91,
+      65.41
+     ],
+     "prefill_tps": 1836.31,
+     "prompt_tokens": 6857,
+     "memory_gb": 12.68,
+     "battery": "62%"
+    }
+   ]
+  }
+ }
+}

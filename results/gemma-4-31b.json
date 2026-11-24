@@ -1,0 +1,54 @@
+{
+ "label": "gemma-4-31b",
+ "model": "gemma-4-31B-it-MLX-4bit",
+ "extra": {},
+ "speed": {
+  "load_s": 5.0,
+  "memory_gb": 19.33,
+  "decode_tps": 13.2,
+  "decode_runs": [
+   12.8,
+   13.2,
+   13.27
+  ],
+  "prefill_6000w": [
+   {
+    "prompt_tokens": 6048,
+    "prefill_tps": 291.63,
+    "ttft": 20.74,
+    "cached": {
+     "cached_tokens": 0
+    }
+   },
+   {
+    "prompt_tokens": 6048,
+    "prefill_tps": 262.37,
+    "ttft": 23.05,
+    "cached": {
+     "cached_tokens": 0
+    }
+   }
+  ],
+  "prefill_24000w": [
+   {
+    "prompt_tokens": 24048,
+    "prefill_tps": 246.38,
+    "ttft": 97.6,
+    "cached": {
+     "cached_tokens": 0
+    }
+   },
+   {
+    "prompt_tokens": 24048,
+    "prefill_tps": 265.45,
+    "ttft": 90.59,
+    "cached": {
+     "cached_tokens": 0
+    }
+   }
+  ],
+  "memory_gb_after_32k": 19.33,
+  "power": "ac",
+  "omlx": "0.8.3"
+ }
+}

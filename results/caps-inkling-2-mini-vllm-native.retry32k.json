@@ -1,0 +1,50 @@
+{
+ "label": "inkling-2-mini-vllm-native",
+ "max_tokens": 32768,
+ "results": [
+  {
+   "id": "long/graph_bfs",
+   "area": "long",
+   "pass": true,
+   "finish": "stop",
+   "error": null,
+   "out_tokens": 25155,
+   "wall": 71.6,
+   "content": "622ff1,c8c8d2,7d54b6,17f0e7,044b12,c059c0,ad141a",
+   "calls": []
+  },
+  {
+   "id": "long/kv_last",
+   "area": "long",
+   "pass": false,
+   "finish": "length",
+   "error": null,
+   "out_tokens": 30883,
+   "wall": 59.4,
+   "content": "",
+   "calls": []
+  },
+  {
+   "id": "math/divisors4",
+   "area": "math",
+   "pass": false,
+   "finish": "length",
+   "error": null,
+   "out_tokens": 32768,
+   "wall": 122.6,
+   "content": "",
+   "calls": []
+  },
+  {
+   "id": "math/euler_poly",
+   "area": "math",
+   "pass": false,
+   "finish": "length",
+   "error": null,
+   "out_tokens": 32768,
+   "wall": 108.7,
+   "content": "",
+   "calls": []
+  }
+ ]
+}

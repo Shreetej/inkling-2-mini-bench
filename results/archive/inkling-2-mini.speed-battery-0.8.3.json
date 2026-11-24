@@ -1,0 +1,48 @@
+{
+ "load_s": 4.7,
+ "memory_gb": 18.43,
+ "decode_tps": 30.5,
+ "decode_runs": [
+  31.14,
+  30.54,
+  29.66
+ ],
+ "prefill_6000w": [
+  {
+   "prompt_tokens": 9481,
+   "prefill_tps": 675.69,
+   "ttft": 14.03,
+   "cached": {
+    "cached_tokens": 0
+   }
+  },
+  {
+   "prompt_tokens": 9543,
+   "prefill_tps": 579.74,
+   "ttft": 16.46,
+   "cached": {
+    "cached_tokens": 0
+   }
+  }
+ ],
+ "prefill_24000w": [
+  {
+   "prompt_tokens": 38020,
+   "prefill_tps": 1168.46,
+   "ttft": 32.54,
+   "cached": {
+    "cached_tokens": 0
+   }
+  },
+  {
+   "prompt_tokens": 38011,
+   "prefill_tps": 1261.23,
+   "ttft": 30.14,
+   "cached": {
+    "cached_tokens": 0
+   }
+  }
+ ],
+ "memory_gb_after_32k": 18.43,
+ "omlx": "0.8.3"
+}

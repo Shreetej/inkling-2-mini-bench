@@ -1,0 +1,52 @@
+{
+ "label": "muse-glimmer-30b",
+ "model": "Muse-Glimmer-30B-4bit",
+ "extra": {},
+ "speed": {
+  "load_s": 4.5,
+  "memory_gb": 20.39,
+  "decode_tps": 19.3,
+  "decode_runs": [
+   19.66,
+   19.25,
+   19.33
+  ],
+  "prefill_6000w": [
+   {
+    "prompt_tokens": 7633,
+    "prefill_tps": 427.18,
+    "ttft": 17.87,
+    "cached": {
+     "cached_tokens": 0
+    }
+   },
+   {
+    "prompt_tokens": 7591,
+    "prefill_tps": 442.72,
+    "ttft": 17.15,
+    "cached": {
+     "cached_tokens": 0
+    }
+   }
+  ],
+  "prefill_24000w": [
+   {
+    "prompt_tokens": 30108,
+    "prefill_tps": 427.45,
+    "ttft": 70.44,
+    "cached": {
+     "cached_tokens": 0
+    }
+   },
+   {
+    "prompt_tokens": 30177,
+    "prefill_tps": 412.95,
+    "ttft": 73.08,
+    "cached": {
+     "cached_tokens": 0
+    }
+   }
+  ],
+  "memory_gb_after_32k": 20.39
+ }
+}
