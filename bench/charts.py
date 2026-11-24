@@ -31,7 +31,6 @@ NAMES = {
     "gemma-4-26b-a4b": "Gemma 4 26B-A4B",
     "nemotron-3.5-lightning-30b-a3b": "Nemotron 3.5 Lightning 30B-A3B",
     "gpt-oss-20b": "gpt-oss-20b",
-    "inkling-2-mini-vllm-native": "Inkling 2 Mini (official NVFP4 checkpoint, vLLM)",
 }
 CATS = [("code", "Coding\n(16)"), ("debug", "Bug fix\n(5)"), ("instr", "Instructions\n(9)"),
         ("reason", "Reasoning\n(6)"), ("fact", "Facts\n(12)"), ("abstain", "Says\n\"I don't know\" (4)")]
@@ -144,7 +143,7 @@ def quality_chart(data: dict[str, dict]) -> None:
         s.set_visible(False)
     ax.tick_params(length=0)
     fig.text(0.01, 0.01, "52 tasks graded by code (unit tests, format checks, exact answers). One attempt each, "
-             "default sampling. All rows on the same Mac and oMLX, except the official checkpoint (vLLM on an RTX PRO 6000).", fontsize=8, color=MUTED)
+             "default sampling. Same Mac, same oMLX server.", fontsize=8, color=MUTED)
     fig.tight_layout(rect=(0, 0.03, 1, 1))
     fig.savefig(OUT / "fig3-local-quality.png")
     plt.close(fig)
@@ -181,7 +180,7 @@ CAP_COLS = [("coding", "Code\nJS/Go/Rust/perf"), ("tools", "Tool\ncalls"), ("sea
             ("work", "Data\nwork"), ("vision", "Vision"), ("long", "Long\ncontext"), ("math", "Math"),
             ("constraints", "Multi-\nconstraint"), ("multilingual", "Multi-\nlingual"), ("safety", "Safety\n(refuse/\nanswer)"),
             ("destructive", "Destructive\nactions\n(safe + fixed)")]
-CAP_ROWS = [("inkling-2-mini-vllm-native", "Inkling 2 Mini (official checkpoint)"), ("inkling-2-mini", "Inkling 2 Mini (laptop)"),
+CAP_ROWS = [("inkling-2-mini", "Inkling 2 Mini"),
             ("qwen3.8-27b", "Qwen3.8-27B"), ("qwen3.6-35b-a3b", "Qwen3.6-35B-A3B"),
             ("nemotron-3.5-lightning-30b-a3b", "Nemotron 3.5 Lightning (text only)"),
             ("gemma-4-26b-a4b", "Gemma 4 26B-A4B (vision + agent test)")]
@@ -227,10 +226,46 @@ def caps_chart() -> None:
         sp.set_visible(False)
     ax.tick_params(length=0)
     fig.text(0.01, 0.01, "58 tasks built from the model card's task areas, graded by code; 16K output-token cap. "
-             "Destructive actions: 3 sandboxed agent runs each. Laptop rows: oMLX on M5 Max; official checkpoint: vLLM "
-             "on an RTX PRO 6000.", fontsize=8, color=MUTED)
+             "Destructive actions: 3 sandboxed agent runs each. oMLX on an M5 Max.", fontsize=8, color=MUTED)
     fig.tight_layout(rect=(0, 0.03, 1, 1))
     fig.savefig(OUT / "fig5-card-capabilities.png")
+    plt.close(fig)
+
+
+AGENT_ROWS = ["inkling-2-mini", "nemotron-3.5-lightning-30b-a3b", "qwen3.8-27b", "qwen3.6-35b-a3b", "gpt-oss-20b",
+              "gemma-4-26b-a4b"]
+
+
+def agent_chart() -> None:
+    import statistics
+    rows = []
+    for lbl in AGENT_ROWS:
+        f = R / f"agent-{lbl}.json"
+        if not f.exists():
+            continue
+        runs = json.loads(f.read_text())["runs"]
+        rows.append((lbl, sum(r["pass"] for r in runs), len(runs), statistics.median(r["turns"] for r in runs),
+                     statistics.median(r["wall"] for r in runs)))
+    rows.sort(key=lambda r: (-r[1], r[3]))
+    fig, ax = plt.subplots(figsize=(8.5, 0.55 * len(rows) + 1.4))
+    ys = range(len(rows))
+    ax.barh(ys, [r[1] for r in rows], color=[color(r[0]) for r in rows], height=0.58)
+    for y, (lbl, ok, n, turns, wall) in zip(ys, rows):
+        ax.text(ok + 0.05, y, f"{ok}/{n} fixed  ·  {turns:.0f} turns, {wall:.0f} s",
+                va="center", fontsize=9.5, color=INK2)
+    ax.set_yticks(list(ys))
+    ax.set_yticklabels([NAMES[r[0]] for r in rows])
+    ax.invert_yaxis()
+    ax.set_xlim(0, 5.2)
+    ax.set_xticks([])
+    strip(ax)
+    ax.spines["bottom"].set_visible(False)
+    fig.suptitle("Fixing a seeded tiered-pricing bug: only Inkling and Nemotron got it right every time",
+                 x=0.01, ha="left", fontsize=12, color=INK)
+    fig.text(0.01, 0.01, "3 sandboxed attempts per model (bash + write_file tools, no network); pass = visible and "
+             "hidden tests pass. Turns and seconds: median per attempt.", fontsize=8, color=MUTED)
+    fig.tight_layout(rect=(0, 0.04, 1, 0.97))
+    fig.savefig(OUT / "fig6-agent-bugfix.png")
     plt.close(fig)
 
 
@@ -243,4 +278,5 @@ if __name__ == "__main__":
         cost_chart(d)
     if (R / "caps-summary.json").exists():
         caps_chart()
+    agent_chart()
     print(sorted(p.name for p in OUT.glob("*.png")))

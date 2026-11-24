@@ -26,7 +26,7 @@ def main() -> None:
             print("skip", label)
             continue
         res = json.loads((OUT / f"caps-{label}.json").read_text())["results"]
-        # the two count-to-10,000 math problems need code, not more tokens (see caps-loop-sample-hosted.json)
+        # the two count-to-10,000 math problems need code, not more tokens (see results/caps-loop-sample.json)
         todo = [by_id[r["id"]] for r in res if r["finish"] == "length" and r["id"] not in
                 ("math/divisors4", "math/euler_poly")]
         if not todo:

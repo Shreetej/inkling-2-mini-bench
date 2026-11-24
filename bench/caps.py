@@ -1,7 +1,7 @@
 """Run the model-card capability suite (caps_tasks.py) against local oMLX models or a remote OpenAI-compatible server.
 
   python3 caps.py inkling-2-mini qwen3.8-27b ...            # local labels from run.MODELS
-  BENCH_BASE=... BENCH_KEYFILE=... python3 caps.py inkling-2-mini-vllm-native=<served-name>
+  BENCH_BASE=... BENCH_KEYFILE=... python3 caps.py my-label=<served-name>   # any OpenAI-compatible server
 
 Vision tasks go only to vision models; text-only models skip them. Results: ../results/caps-<label>.json
 """
@@ -18,9 +18,8 @@ from caps_tasks import Cap, all_caps
 from run import BASE, MODELS, OUT, http, unload_all
 
 LOCAL = "127.0.0.1" in BASE
-VISION = {"inkling-2-mini", "qwen3.8-27b", "qwen3.6-35b-a3b", "gemma-4-26b-a4b", "inkling-2-mini-vllm-native"}
-TEXT = {"inkling-2-mini", "qwen3.8-27b", "qwen3.6-35b-a3b", "nemotron-3.5-lightning-30b-a3b",
-        "inkling-2-mini-vllm-native"}
+VISION = {"inkling-2-mini", "qwen3.8-27b", "qwen3.6-35b-a3b", "gemma-4-26b-a4b"}
+TEXT = {"inkling-2-mini", "qwen3.8-27b", "qwen3.6-35b-a3b", "nemotron-3.5-lightning-30b-a3b"}
 MAX_TOKENS = 16384
 MAX_TOOL_TURNS = 15
 
@@ -91,7 +90,8 @@ def run_label(label: str, model: str, extra: dict) -> None:
             rec = json.loads(ln)
             if not rec.get("error"):
                 done[rec["id"]] = rec
-    caps = [c for c in all_caps() if (label in VISION if c.vision else label in TEXT)]
+    known = label in VISION | TEXT  # unknown labels (e.g. your own server) run every task
+    caps = [c for c in all_caps() if not known or (label in VISION if c.vision else label in TEXT)]
     todo = [c for c in caps if c.id not in done]
     if LOCAL and todo:
         unload_all()

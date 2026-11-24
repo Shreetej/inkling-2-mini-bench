@@ -134,46 +134,6 @@
    "abstain/fake_port"
   ]
  },
- "inkling-2-mini-vllm-native": {
-  "model": "inkling-2-mini-official",
-  "remote_decode_tps": 174.8,
-  "remote_ttft_38k_s": 4.59,
-  "total": 52,
-  "by_cat": {
-   "code": "16/16",
-   "debug": "5/5",
-   "instr": "9/9",
-   "reason": "6/6",
-   "fact": "12/12",
-   "abstain": "4/4"
-  },
-  "out_tokens": 66387,
-  "median_tokens_code": 1294.5,
-  "truncated": [],
-  "errors": [],
-  "failed": [],
-  "agent": {
-   "passes": "3/3",
-   "median_wall_s": 11.0,
-   "median_turns": 6,
-   "median_tokens": 1687,
-   "stops": [
-    "answered",
-    "answered",
-    "answered"
-   ],
-   "repeated_commands": [
-    0,
-    0,
-    0
-   ],
-   "tests_untouched": [
-    true,
-    true,
-    true
-   ]
-  }
- },
  "inkling-2-mini": {
   "model": "Inkling-2-Mini-oQ4e-mtp",
   "decode_tps": 50.5,

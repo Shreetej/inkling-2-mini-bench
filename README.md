@@ -12,7 +12,6 @@ All grading is done by code (unit tests, compilers, exact answers, format checks
 |---|---|
 | Laptop | MacBook Pro M5 Max, 32-core GPU, 36 GB (about 28 GB usable by the GPU), macOS 27.2, on AC power with the battery held at 80% (not charging), Low Power Mode off |
 | Local server | [oMLX](https://github.com/jundot/omlx) 0.8.3 (some early passes on 0.8.2; see "Speed"), OpenAI-compatible API on `127.0.0.1:8005`, batch size 1 |
-| Official checkpoint | `thinkingmachines/Inkling-2-Mini` (NVFP4 experts, MXFP8 last layers) on one NVIDIA RTX PRO 6000 (Blackwell), vLLM 0.34.0rc1, `--reasoning-parser inkling --speculative-config '{"method":"dspark","num_speculative_tokens":7,"draft_sample_method":"probabilistic"}' --max-model-len 65536` |
 | Python | 3.13; `pip install matplotlib pillow pytest certifi numpy`. The capability suite also needs `node`, `go` and `rustc` |
 
 Local models (oMLX ids, as in `bench/run.py`):
@@ -27,7 +26,6 @@ Local models (oMLX ids, as in `bench/run.py`):
 | `gemma-4-31b` | `lmstudio-community/gemma-4-31B-it-MLX-4bit` (speed only) | dense 31B |
 | `nemotron-3.5-lightning-30b-a3b` | `mlx-community/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-4bit` (text only) | hybrid MoE, 3B active |
 | `gpt-oss-20b` | `mlx-community/gpt-oss-20b-MXFP4-Q8` (text only) | MoE, 3.6B active |
-| `inkling-2-mini-vllm-native` | official checkpoint on the vLLM server above | |
 
 `mlx-community/Inkling-2-Mini-4bit` was also tried and does not load in oMLX 0.8.2/0.8.3 ("1556 parameters not in
 model"); its README says it needs an unmerged mlx-lm pull request.
@@ -37,7 +35,7 @@ model"); its README says it needs an unmerged mlx-lm pull request.
 | Post section | Script | Results |
 |---|---|---|
 | Lab-reported benchmarks (fig 1) | `bench/charts.py` | `lab_numbers.json` (copied from the model card; not reproduced) |
-| Quality, 52 tasks (fig 3, the 50/52 and 52/52) | `bench/tasks.py` (tasks + graders), `bench/run.py` (local), `bench/remote.py` (vLLM), `bench/analyze.py` (offline regrade) | `results/<label>.json`, `results/summary.json` |
+| Quality, 52 tasks (fig 3, the 50/52) | `bench/tasks.py` (tasks + graders), `bench/run.py` (runner), `bench/analyze.py` (offline regrade) | `results/<label>.json`, `results/summary.json` |
 | "It thinks less" (output tokens, 16K truncations) | `bench/analyze.py` | `out_tokens`, `truncated` in `results/summary.json` |
 | Agent bug fix, tiered pricing (3/3 etc.) | `bench/agent.py`, `bench/agent_ws/` (seeded bug), `bench/hidden_test.py`, `bench/sandbox.sb` | `results/agent-<label>.json` (every command, final reply and the model's `billing.py`) |
 | The `round(total, 2)` trap | | `billing_py` field of the failed runs in `results/agent-*.json` |
@@ -45,8 +43,8 @@ model"); its README says it needs an unmerged mlx-lm pull request.
 | Score vs time (fig 4) | `bench/charts.py` (output tokens / measured speed) | as above |
 | Model-card areas, 58 tasks (fig 5) | `bench/caps_tasks.py` (tasks + graders), `bench/caps_assets.py` (generated images), `bench/caps.py` (runner), `bench/caps_analyze.py` (regrade) | `results/caps-<label>.json`, `results/caps-summary.json` |
 | 32K retries | `bench/caps_retry.py` | `results/caps-<label>.retry32k.json` |
-| "Not a loop" (the maths problem) | | `results/caps-loop-sample-hosted.json` (last 6,000 characters of the reasoning) |
-| Destructive actions (0 protected files touched in 18 runs) | `bench/destructive.py` | `results/destructive-<label>.json` |
+| "Not a loop" (the maths problem) | | `results/caps-loop-sample.json` (32K-token run; last 6,000 characters of the reasoning) |
+| Destructive actions (0 protected files touched in 15 runs) | `bench/destructive.py` | `results/destructive-<label>.json` |
 | Loop diagram (fig 0) | `bench/diagram.py` | |
 
 ## Reproduce
@@ -67,9 +65,8 @@ python3 caps_assets.py && python3 caps.py inkling-2-mini
 python3 destructive.py inkling-2-mini
 python3 interleave.py                            # ~25 min; refuses to run on battery or in Low Power Mode
 
-# any OpenAI-compatible server: label=served-model-name, key read from a file (never on the command line)
-BENCH_BASE=https://your-server BENCH_KEYFILE=~/.my_api_key python3 remote.py inkling-2-mini-vllm-native <served-name>
-BENCH_BASE=https://your-server BENCH_KEYFILE=~/.my_api_key python3 caps.py inkling-2-mini-vllm-native=<served-name>
+# any other OpenAI-compatible server: label=served-model-name, key read from a file (never on the command line)
+BENCH_BASE=https://your-server BENCH_KEYFILE=~/.my_api_key python3 caps.py my-label=<served-name>
 ```
 
 The agent and destructive-actions tests run every model command under macOS `sandbox-exec` (`bench/sandbox.sb`): no
@@ -115,8 +112,6 @@ scores in the post use the final graders; `check_graders.py` re-validates the ca
   tokens and then passed in 552 tokens on a re-run).
 - The capability suite checks whether a skill shows up; it is much easier than the benchmarks on the model card and
   reproduces only one of their gaps (long context). The destructive-actions scenario labels the files clearly.
-- The official checkpoint ran on different hardware, so it is compared on quality and agent behaviour only, not on
-  speed against the laptop. Its server's 64K context cut one 32K retry short.
 - Laptop speed depends on the runtime version and the power state; see "Speed".
 
 ## Licence
